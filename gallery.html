@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | Seth Champaran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+
+<style>
+/* GALLERY PAGE */
+.gallery-page {
+  padding: 60px 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+}
+
+/* CLOSE */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* NAV BUTTONS */
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev { left: 30px; }
+.lightbox .next { right: 30px; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 36px;
+  }
+}
+
+
+</style>  
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+  const images = document.querySelectorAll(".gallery-grid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox .close");
+  const nextBtn = document.querySelector(".lightbox .next");
+  const prevBtn = document.querySelector(".lightbox .prev");
+
+  let currentIndex = 0;
+
+  if (!images.length) return;
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentIndex = index;
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    lightbox.style.display = "flex";
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
+
+  function changeSlide(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+  nextBtn.addEventListener("click", () => changeSlide(1));
+  prevBtn.addEventListener("click", () => changeSlide(-1));
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") changeSlide(1);
+      if (e.key === "ArrowLeft") changeSlide(-1);
+    }
+  });
+
+});
+
+
+</script>
+
+
+
+<!-- HEADER (reuse your existing header here) -->
+ <header>
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Seth champaran Logo">
+      <span class="brand-name">Seth Champaran House</span>
+    </a>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="breadcrumb">
+  <h1>Gallery</h1>
+  <p><a href="index.html">Home</a> / Gallery</p>
+</section>
+
+<section class="gallery-page">
+  <div class="gallery-grid">
+
+    <img src="images/gal1.jpg" alt="Food 1" >
+    <img src="images/gal2.jpg" alt="Food 2" >
+    <img src="images/gal3.jpg" alt="Food 3" >
+    <img src="images/gal4.jpg" alt="Food 4" >
+    <img src="images/gal5.jpg" alt="Food 5" >
+    <img src="images/gal6.jpg" alt="Food 6" >
+    <img src="images/gal7.jpg" alt="Food 7" >
+    <img src="images/gal8.jpg" alt="Food 8" >
+    <img src="images/gal9.jpg" alt="Food 9" >
+    <img src="images/gal10.jpg" alt="Food 10" >
+    <img src="images/gal11.jpg" alt="Food 11" >
+    <img src="images/gal12.jpg" alt="Food 12" >
+    <img src="images/gal13.jpg" alt="Food 13" >
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <span class="prev" onclick="changeSlide(-1)">❮</span>
+  <img id="lightbox-img">
+  <span class="next" onclick="changeSlide(1)">❯</span>
+</div>
+
+
+<a
+  href="https://wa.me/918077801768?text=Hello%20SethChamparan,%20I%20want%20to%20order%20food"
+  class="whatsapp-float"
+  target="_blank"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- FOOTER (reuse your existing footer here) -->
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+
+      <!-- LOGO + NAME (SAME LINE) -->
+      <div class="footer-brand-top">
+        <img src="images/logo.png" alt="Seth Champaran Logo">
+        <span class="footer-brand-name">Seth Champaran</span>
+      </div>
+
+      <!-- TAGLINE -->
+      <p>Delicious food delivered with love.</p>
+
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h3>Reach Us</h3>
+      <p>📍 Nahar Pul, Pilkhar, Etawah</p>
+      <p>☎ +91 98765 43210</p>
+      <p>✉ info@sethchamparan</p>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61575716347777" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Seth Champaran. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
