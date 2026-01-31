@@ -352,7 +352,7 @@ header {
 @media(max-width: 768px) {
   
   .hero-content h1 {
-    font-size: 25px;
+    font-size: 27px;
   }
 
   .menu h2 {
@@ -768,6 +768,7 @@ header {
     font-size: 26px;
   }
 }
+
 
 
 
