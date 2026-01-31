@@ -351,10 +351,8 @@ header {
 /* Responsive */
 @media(max-width: 768px) {
   
-
-  .hero-content button {
-    padding:10px 20px;
-    font-size: 12px;
+  .hero-content h1 {
+    font-size: 25px;
   }
 
   .menu h2 {
@@ -770,6 +768,7 @@ header {
     font-size: 26px;
   }
 }
+
 
 
 
