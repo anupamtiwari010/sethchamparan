@@ -4,22 +4,19 @@
   <meta charset="UTF-8">
   <title>Contact Us | Seth Champaran</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
+<!-- HEADER (reuse your existing header here) -->
+ <header>
   <nav class="navbar">
     <a href="index.html" class="brand">
       <img src="images/logo.png" alt="Seth champaran Logo">
-      <span class="brand-name">Seth Champaran House</span>
+      <span class="brand-name">Seth Champaran</span>
     </a>
 
     <div class="menu-toggle" id="menuToggle">
@@ -36,11 +33,11 @@
   </nav>
 </header>
 
-<!-- ================= BREADCRUMB ================= -->
 <section class="breadcrumb">
   <h1>Contact Us</h1>
   <p><a href="index.html">Home</a> / Contact Us</p>
 </section>
+
 
 <!-- ================= CONTACT SECTION ================= -->
 <section class="contact-page">
@@ -89,7 +86,9 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+
+<!-- FOOTER (reuse your existing footer here) -->
+
 <footer class="footer">
   <div class="footer-container">
 
@@ -145,22 +144,12 @@
   </div>
 </footer>
 
+
 <script src="script.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ================= MOBILE MENU ================= */
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("show");
-    });
-  }
-
-  /* ================= CONTACT FORM ================= */
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -189,29 +178,31 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const whatsappText =
-        "Hello Seth Champaran,%0A" +
-        "My Name: " + name + "%0A" +
-        "Address: " + address + "%0A" +
-        "Phone: " + phone + "%0A" +
-        "Message: " + message;
+      // ✅ Build WhatsApp message
+      const text = 
+        `Hello Anand Sweets,
+My Name: ${name}
+Address: ${address}
+Phone: ${phone}
+Message: ${message}`;
 
-      const whatsappURL =
-        "https://wa.me/919758710999?text=" + whatsappText;
+      // ✅ Encode text (important)
+      const encodedText = encodeURIComponent(text);
 
-      // 🔴 Replace with your WhatsApp number
-      window.open(whatsappURL, "_blank");
+      // ✅ Your WhatsApp number
+      const whatsappURL = `https://wa.me/919758710999?text=${encodedText}`;
 
       status.textContent = "Opening WhatsApp...";
       status.style.color = "green";
+
+      // ✅ Open WhatsApp (most reliable)
+      window.location.href = whatsappURL;
 
       contactForm.reset();
     });
   }
 
-});  // ✅ DO NOT REMOVE THIS LINE
-
-
+});
 </script>
 
 </body>
