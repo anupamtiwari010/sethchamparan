@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seth Champaran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Seth Champaran Logo">
+      <span class="brand-name">Seth Champaran</span>
+    </a>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="contact.html">Enquiry</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Welcome to<br>Seth Champaran </h1>
+    <p>Finest Cuts • Bold Flavours • Twist Of Innovation</p>
+    <button onclick="scrollToMenu()">View Menu</button>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <h2>Wide Range Of Deserts</h2>
+  <div class="menu-items">
+    <div class="menu-card fade-in">
+        <img src="images/chp1.png" alt="">
+      <h3>Handi chicken</h3>
+      <p>Rich creamy sauce with herbs</p>
+      <span>₹299</span>
+      
+    </div>
+    <div class="menu-card fade-in">
+        <img src="images/chp2.png" alt="">
+      <h3>Handi Mutton</h3>
+      <p>Grilled patty with fresh veggies</p>
+      <span>₹199</span>
+      
+    </div>
+    <div class="menu-card fade-in">
+        <img src="images/chp3.png" alt="Italian Pasta">
+      <h3>Handi Paneer</h3>
+      <p>Smoky & spicy Indian delight</p>
+      <span>₹249</span>
+      
+    </div>
+    <div class="menu-card fade-in">
+        <img src="images/chp4.png" alt="">
+      <h3>Tandooei Roti/Naam</h3>
+      <p>Rich creamy sauce with herbs</p>
+      <span>₹299</span>
+      
+    </div>
+    
+  </div>
+
+ 
+</section>
+
+
+
+
+
+<!--
+<section class="menu" id="menu">
+  <h2>Our Special Menu</h2>
+
+  <div class="menu-items">
+    <div class="menu-card fade-in">
+      <h3>Italian Pasta</h3>
+      <p>Rich creamy sauce with herbs</p>
+      <span>₹299</span>
+      <button onclick="addToCart('Italian Pasta',299)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card fade-in">
+      <h3>Cheese Burger</h3>
+      <p>Grilled patty with fresh veggies</p>
+      <span>₹199</span>
+      <button onclick="addToCart('Cheese Burger',199)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card fade-in">
+      <h3>Paneer Tikka</h3>
+      <p>Smoky & spicy Indian delight</p>
+      <span>₹249</span>
+      <button onclick="addToCart('Paneer Tikka',249)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="cart">
+    <h3>🛒 Your Order</h3>
+    <ul id="cartItems"></ul>
+    <h4>Total: ₹<span id="totalPrice">0</span></h4>
+    <button class="order-btn">Place Order</button>
+  </div>
+</section>
+-->
+
+<!-- About -->
+<section class="testimonials" id="testimonials">
+  <h2>Customers' Reviews</h2>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+
+      <div class="testimonial">
+        <p>“Amazing taste and great service. Best restaurant in Etawah!”</p>
+        <h4>— Rahul Sharma</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>“Food quality is excellent and prices are reasonable.”</p>
+        <h4>— Neha Verma</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>“Perfect place for family dinner. Loved the ambience.”</p>
+        <h4>— Amit Singh</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>“Fast service and delicious food. Highly recommended !”</p>
+        <h4>— Pooja Mehta</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="chefs" id="chefs">
+  <h2>Our Chefs</h2>
+
+  <div class="chef-box">
+    <div class="chef-card">
+      <img src="images/chef1.jpg">
+      <h3>Chef Arjun</h3>
+      <p>Italian Cuisine Expert</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="images/chef2.jpg">
+      <h3>Chef Neha</h3>
+      <p>Indian Spice Specialist</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="images/chef3.jpg">
+      <h3>Chef David</h3>
+      <p>Continental Master</p>
+    </div>
+    <div class="chef-card">
+      <img src="images/chef4.jpg">
+      <h3>Chef David</h3>
+      <p>Continental Master</p>
+    </div>
+    <div class="chef-card">
+      <img src="images/chef5.jpg">
+      <h3>Chef Neha</h3>
+      <p>Indian Spice Specialist</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2>Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="images/gal13.jpg">
+    <img src="images/gal12.jpg">
+    <img src="images/gal9.jpg">
+    <img src="images/gal6.jpg">
+  </div>
+</section>
+
+
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <h2>Visit Us Today</h2>
+  <p>📍 Etawah | ☎ +91 97587 10999</p>
+  <button onclick="window.location.href='contact.html'">Contact Us</button>
+</section>
+
+<!--
+<section class="map-section">
+  <h2>Find Us</h2>
+
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=New+Delhi+India&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+-->
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+
+      <!-- LOGO + NAME (SAME LINE) -->
+      <div class="footer-brand-top">
+        <img src="images/logo.png" alt="Seth Champaran Logo">
+        <span class="footer-brand-name">Seth Champaran</span>
+      </div>
+
+      <!-- TAGLINE -->
+      <p style="font-size: 14px; line-height: 1.7; text-align:justify;">Crafted by master chefs our dishes bring you the finest cuts & bold flavours. From rich mutton handi to Bihar's famous Ahuna mutton & chicken, every bite is packed with tradition and a twist of innovation.</p>
+
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Location</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6789209056546!2d79.06443297434978!3d26.75462037674178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3975e1004bd7631b%3A0x7dc63fb721b31810!2sSeth%20champaran%20Etawah!5e0!3m2!1sen!2sin!4v1767808219976!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h3>Reach Us</h3>
+      <p>📍 Nahar Pul, Pilkhar, Etawah</p>
+      <p>☎ +91 97587 10999</p>
+      <p>✉ info@sethchamparan</p>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61575716347777" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@sethchamparanhouseetawah" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Seth Champaran. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Floating Button -->
+<div class="sweet-wa-btn" id="sweetWaBtn">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  <span>Order Food</span>
+</div>
+
+<!-- Popup -->
+<div class="sweet-wa-popup" id="sweetWaPopup">
+  <div class="sweet-wa-box">
+    <span class="sweet-wa-close" id="sweetWaClose">×</span>
+
+    <h2>🍬 Order Food on WhatsApp</h2>
+
+    <div class="sweet-user-info">
+      <input type="text" id="sweetName" placeholder="Your Name">
+      <input type="text" id="sweetPhone" placeholder="Phone Number">
+      <textarea id="sweetAddress" placeholder="Delivery Address"></textarea>
+    </div>
+
+    <h3>Select Items</h3>
+
+    <div class="sweet-products-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="sweet-product">
+        <img src="images/chp1.png">
+        <h4>Handi Chicken</h4>
+        <p>₹1000 / Kg</p>
+
+        <div class="sweet-input-group">
+          <input type="number" min="0" step="50" placeholder="Grams" id="w0">
+          <input type="number" min="0" placeholder="Plate" id="p0">
+        </div>
+
+        <div class="sweet-price">Price: ₹<span id="price0">0</span></div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="sweet-product">
+        <img src="images/chp2.png">
+        <h4>Handi Mutton</h4>
+        <p>₹1000 / Kg</p>
+
+        <div class="sweet-input-group">
+          <input type="number" min="0" step="50" placeholder="Grams" id="w1">
+          <input type="number" min="0" placeholder="Plate" id="p1">
+        </div>
+
+        <div class="sweet-price">Price: ₹<span id="price1">0</span></div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="sweet-product">
+        <img src="images/chp3.png">
+        <h4>Handi Paneer</h4>
+        <p>₹1000 / Kg</p>
+
+        <div class="sweet-input-group">
+          <input type="number" min="0" step="50" placeholder="Grams" id="w2">
+          <input type="number" min="0" placeholder="Plate" id="p2">
+        </div>
+
+        <div class="sweet-price">Price: ₹<span id="price2">0</span></div>
+      </div>
+
+    </div>
+ <div class="sweet-product">
+        <img src="images/QR.jpg" style="height: auto; width: 60%;">
+        <h4>Phonepay QR Code</h4>
+      </div>
+    <div class="sweet-total">
+      Total: ₹<span id="sweetTotal">0</span>
+    </div>
+
+    <button class="sweet-send-btn" id="sweetSendOrder">Send Order on WhatsApp</button>
+
+    <p id="sweetStatus"></p>
+  </div>
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
